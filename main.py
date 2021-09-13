@@ -34,7 +34,7 @@ win = 0
 freeze = False
 for row in range(3):
   lboard.append([" "]*3)
-  print lboard[row]
+  print (lboard[row])
 def convert(row,col):
   global firstx, firsty, stepx, stepy, lboard, xmax, xmin, ymax, ymin
   b_x = (firstx +  (stepx / 2) + col * stepx)
@@ -90,20 +90,20 @@ def click_board(x,y):
               convert_both('X', player, row, col)
               turn += 1   
               check_win()
-              print turn
-              print win
+              print (turn)
+              print (win)
               if win == 0 and turn >= 9:
-                print "Draw"
+                print ("Draw")
                 t.clear()
                 t.write("Draw", font = ("arial",40,"bold"))
                 freeze = True
               if win == 1:
-                print "Win"
+                print ("Win")
                 t.clear()
                 t.write("Win", font = ("arial",40,"bold"))
                 freeze =  True
               if win == 2:
-                print "Loss"
+                print ("Loss")
                 t.clear()
                 t.write("Loss", font = ("arial",40,"bold"))
                 freeze = True
@@ -112,7 +112,7 @@ def click_board(x,y):
               #   wn.onclick(None)
               #   return None
     for row in range(3):
-      print (lboard[row])
+      print ((lboard[row]))
    
 def convert_both(turnholder, player_t, row, col):
   global lboard
@@ -159,11 +159,11 @@ def ai_play():
         count_s_d2 += 1
         row_s_d2 = col
         col_s_d2 = 2 - col
-    # print "1",flag, " ", "o_r =", count_o_row, "s_r=", count_s_row
+    # print ("1",flag, " ", "o_r =", count_o_row, "s_r=", count_s_row
     if flag == False and count_o_row == 2 and count_s_row == 1:
       flag = True
       convert_both("O",opponent,row_s_r, col_s_r)
-    # print flag, " ", "o_c =", count_o_col, "s_c=", count_s_col 
+    # print (flag, " ", "o_c =", count_o_col, "s_c=", count_s_col 
     if flag == False and count_o_col == 2 and count_s_col == 1:
       flag = True
       convert_both("O",opponent,row_s_c, col_s_c)
@@ -219,11 +219,11 @@ def ai_play():
         count_s_d2 += 1
         row_s_d2 = col
         col_s_d2 = 2 - col
-    # print "1",flag, " ", "o_r =", count_o_row, "s_r=", count_s_row
+    # print ("1",flag, " ", "o_r =", count_o_row, "s_r=", count_s_row
     if flag == False and count_x_row == 2 and count_s_row == 1:
       flag = True
       convert_both("O",opponent,row_s_r, col_s_r)
-    # print flag, " ", "o_c =", count_o_col, "s_c=", count_s_col 
+    # print (flag, " ", "o_c =", count_o_col, "s_c=", count_s_col 
     if flag == False and count_x_col == 2 and count_s_col == 1:
       flag = True
       convert_both("O",opponent,row_s_c, col_s_c)
@@ -310,7 +310,7 @@ def ai_play():
     flag = True  
     convert_both("O",opponent,ai_row, ai_col)     
   for row in range(3):
-    print (lboard[row])
+    print ((lboard[row]))
       
 first = input("Who goes first? Enter 'p' for the player or 'c' for the computer").lower()
 wn.onclick(click_board)
@@ -322,19 +322,19 @@ while True:
     ai_play()
     turn += 1
     check_win()
-    print turn
+    print (turn)
     if win == 0 and turn >= 9:
-      print "Draw"
+      print ("Draw")
       t.clear()
       t.write("Draw", font = ("arial",40,"bold"))
       freeze = True
     if win == 1:
-      print "Win"
+      print ("Win")
       t.clear()
       t.write("Win", font = ("arial",40,"bold"))
       freeze =  True
     if win == 2:
-      print "Loss"
+      print ("Loss")
       t.clear()
       t.write("Loss", font = ("arial",40,"bold"))
       freeze = True
